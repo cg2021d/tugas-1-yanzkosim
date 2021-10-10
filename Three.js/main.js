@@ -166,6 +166,62 @@ function main() {
       wireframe: true
     }));
   }
+  // {
+  //   const loader = new THREE.FontLoader();
+  //   // promisify font loading
+  //   function loadFont(url) {
+  //     return new Promise((resolve, reject) => {
+  //       loader.load(url, resolve, undefined, reject);
+  //     });
+  //   }
+
+  //   async function doit() {
+  //     const font = await loadFont('https://threejsfundamentals.org/threejs/resources/threejs/fonts/helvetiker_regular.typeface.json');  
+  //     const geometry = new THREE.TextGeometry('daeho', {
+  //       font: font,
+  //       size: 3.0,
+  //       height: .2,
+  //       curveSegments: 12,
+  //       bevelEnabled: true,
+  //       bevelThickness: 0.15,
+  //       bevelSize: .3,
+  //       bevelSegments: 5,
+  //     });
+  //     const mesh = new THREE.Mesh(geometry, createMaterial());
+  //     geometry.computeBoundingBox();
+  //     geometry.boundingBox.getCenter(mesh.position).multiplyScalar(-1);
+
+  //     const parent = new THREE.Object3D();
+  //     parent.add(mesh);
+
+  //     addObject(0, -1, parent);
+  //   }
+  //   doit();
+  // } 
+  {
+    const loader = new THREE.FontLoader();
+    loader.load('https://threejsfundamentals.org/threejs/resources/threejs/fonts/helvetiker_regular.typeface.json', 
+      function ( font ) {
+        const geometry = new THREE.TextGeometry('daeho', {
+          font: font,
+          size: 3.0,
+          height: .2,
+          curveSegments: 12,
+          bevelEnabled: true,
+          bevelThickness: 0.15,
+          bevelSize: .3,
+          bevelSegments: 5,
+        });
+
+        const mesh = new THREE.Mesh(geometry, createMaterial());
+        geometry.computeBoundingBox();
+        geometry.boundingBox.getCenter(mesh.position).multiplyScalar(-1);
+        const parent = new THREE.Object3D();
+        parent.add(mesh);
+    
+        addObject(0, -1, parent);
+      })
+  }
 
   function onWindowResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
