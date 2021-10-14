@@ -1,4 +1,4 @@
-# tugas-1-yanzkosim
+# Tugas Individu 1
 
 
 Nama : Stefanus Albert Kosim
