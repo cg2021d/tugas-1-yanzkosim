@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>RayCaster</title>
-    <script type="module" src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Individu 3</title>
 </head>
 <body>
-    <form >
-        <label>Cube: </label>
-        <input type="number" name="cube" id="cube" value="0" />
-        <label>Sphere: </label>
-        <input type="number" name="sphere" id="sphere" value="0" />
-        <label>Torus: </label>
-        <input type="number" name="torus" id="torus" value="0" />
-        <input type="submit" value="Submit" />
-    </form>
-    <br />
+    <canvas class="webgl"></canvas>
+    <div class="text-score">
+        Score: <span id="score"></span>
+    </div>
+    <div class="text-shape">
+        Objects: <span id="objects"></span>
+    </div>
 </body>
 </html>
