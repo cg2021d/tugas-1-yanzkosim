@@ -1,6 +1,7 @@
 # tugas-yanzkosim
 
 Nama : Stefanus Albert Kosim
+
 NRP : 05111940000096
 
 1. [Tugas 1 - Menggambar dengan WebGL](https://github.com/cg2021d/tugas-1-yanzkosim/tree/main/TugasIndividu1%20-%20Menggambar%20dengan%20WebGL)
