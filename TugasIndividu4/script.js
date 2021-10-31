@@ -22,8 +22,7 @@ worldMesh.receiveShadow = true;
 scene.add(worldMesh);
 
 const worldFloor = new THREE.BoxGeometry(200, 2, 100);
-const floorTexture = new THREE.TextureLoader().load("floor.jpg");
-const floorMaterial = new THREE.MeshPhysicalMaterial({ color: 0xffffff, side: THREE.DoubleSide, map: floorTexture });
+const floorMaterial = new THREE.MeshPhysicalMaterial({ color: 0x10a0b0, side: THREE.DoubleSide });
 const floorMesh = new THREE.Mesh(worldFloor, floorMaterial);
 floorMesh.position.set(0, -1, 0);
 floorMesh.receiveShadow = true;
@@ -35,6 +34,9 @@ light.position.set(100, 100, 10);
 light.castShadow = true;
 light.shadow.radius = 3;
 scene.add(light);
+
+const alight = new THREE.AmbientLight();
+scene.add(alight);
 
 // Add Camera
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
